@@ -125,6 +125,10 @@ function setFoodPosition(){
    food.y = randomY;
 }
 
+/* -----------------------------------------------------------------------
+*  input Functions
+* -----------------------------------------------------------------------
+*/
 function keyboardHandler(event) {
     console.log(event);
 }
