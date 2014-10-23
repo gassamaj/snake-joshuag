@@ -39,7 +39,10 @@ function gameInitialize() {
 
    canvas.width = screenWidth;
    canvas.height = screenHeight;
-   }
+      
+
+  document.addEventListener ("keydown", keyboardHandler);
+}
 
      function gameLoop() {
          gameDraw();
@@ -87,8 +90,10 @@ function snakeUpdate() {
     if(snakeDirection == "down") {
        snakeHeadY++;
     }
-   
-    var snakeTail = snake.pop();
+    else {
+        snakeHeadX++;
+    }
+        var snakeTail = snake.pop();
    snakeTail.x = snakeHeadX;
    snakeTail.y = snakeHeadY;
    snake.unshift(snakeTail);
@@ -118,4 +123,8 @@ function setFoodPosition(){
 
    food.x = randomX;   
    food.y = randomY;
+}
+
+function keyboardHandler(event) {
+    console.log(event);
 }
