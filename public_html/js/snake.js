@@ -135,7 +135,7 @@ function keyboardHandler(event) {
   if(event.keyCode == "39" && snakeDirection != "left") {
       snakeDirection = "right";
     }
-    else if (event.keyCode == "40") {
+    else if (event.keyCode == "40" && snakeDirection != "up") {
         snakeDirection = "down";
 }
 }
