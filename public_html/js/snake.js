@@ -95,8 +95,9 @@ function snakeUpdate() {
     }
    
     checkFoodCollisions (snakeHeadX, snakeHeadY);
-    
-   var snakeTail = snake.pop();
+    checkWallCollisions(snakeHeadX, snakeHeadY);
+   
+    var snakeTail = snake.pop();
    snakeTail.x = snakeHeadX;
    snakeTail.y = snakeHeadY;
    snake.unshift(snakeTail);
@@ -166,7 +167,12 @@ function checkFoodCollisions(snakeHeadX, snakeHeadY) {
        snake.push({
            x: 0,
            y: 0
-        });
+       });      
         snakeLength++;
     }
-}   
+}
+
+function checkWallCollisions (snakeHead, snakeHeadY) {
+    if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
+        console.log ("Wall Collision");
+    }
