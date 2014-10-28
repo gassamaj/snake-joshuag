@@ -51,6 +51,7 @@ function gameInitialize() {
 
 function gameLoop() {
     gameDraw();
+    console.log(gameState);
     if (gameState == "PLAY") {
         snakeUpdate();
         snakeDraw();
@@ -179,7 +180,7 @@ function checkFoodCollisions(snakeHeadX, snakeHeadY) {
     }
 }
 
-function checkWallCollisions(snakeHead, snakeHeadY) {
+function checkWallCollisions(snakeHeadX, snakeHeadY) {
     if (snakeHeadX * snakeSize >= screenWidth || snakeHeadX * snakeSize < 0) {
         setState("GAME OVER");
     }
