@@ -47,6 +47,7 @@ function gameInitialize() {
     document.addEventListener("keydown", keyboardHandler);
     
     gameOverMenu = document.getElementById("gameOver");
+    centerMenuPosition(gameOverMenu);
     
     setState("PLAY");
 }  
@@ -198,7 +199,12 @@ function setState (state) {
     gameState = state;
     showMenu(state);
 }
-    
+
+/* ---------------------------------------------------------------------------
+*  Menu Functions
+*  ---------------------------------------------------------------------------
+*/
+
 function displayMenu(menu) {
         menu.style.visibility = "visible";
     }
@@ -207,4 +213,8 @@ function displayMenu(menu) {
       if (state == "GAME OVER") {
           displayMenu(gameOverMenu);
     }   
-   }
+}
+ 
+ function centerMenuPosition (menu) {
+     menu.style.top = (screenHeight / 2) + "px";
+ }
