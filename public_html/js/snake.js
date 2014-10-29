@@ -75,6 +75,7 @@ function gameDraw() {
 function gameRestart() {
     snakeInitialize ();
     foodInitialize ();
+    hideMenu(gameOverMenu);
     setState("PLAY");
 }
 
@@ -219,7 +220,11 @@ function displayMenu(menu) {
         menu.style.visibility = "visible";
     }
     
-    function showMenu (state) {
+    function hideMenu(menu) {
+        menu.style.visibility = "hidden";
+    }
+
+function showMenu (state) {
       if (state == "GAME OVER") {
           displayMenu(gameOverMenu);
     }   
