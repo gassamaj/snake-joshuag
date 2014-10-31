@@ -92,7 +92,7 @@ function gameRestart() {
 
 function snakeInitialize() {
     snake = [];
-    snakeLength = 1;
+    snakeLength = 30;
     snakeSize = 20;
     snakeDirection = "down";
 
