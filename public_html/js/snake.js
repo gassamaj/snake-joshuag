@@ -64,7 +64,7 @@ function gameInitialize() {
 
 function gameLoop() {
     gameDraw();
-    console.log(gameState);
+    drawScoreboard();
     if (gameState == "PLAY") {
         snakeUpdate();
         snakeDraw();
@@ -244,5 +244,5 @@ function centerMenuPosition(menu) {
 }
 
 function drawScoreboard() {
-    scoreboard.innerHTML = snakeLenght;
+    scoreboard.innerHTML = "Length: " + snakeLength;
 }
